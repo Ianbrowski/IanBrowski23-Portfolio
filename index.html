@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IAN / CORP / TERMINAL</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23bf0603%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><circle cx=%2212%22 cy=%2212%22 r=%2210%22></circle><line x1=%2222%22 y1=%2212%22 x2=%2218%22 y2=%2212%22></line><line x1=%226%22 y1=%2212%22 x2=%222%22 y2=%2212%22></line><line x1=%2212%22 y1=%226%22 x2=%2212%22 y2=%222%22></line><line x1=%2212%22 y1=%2222%22 x2=%2212%22 y2=%2218%22></line></svg>">
+    <link rel="stylesheet" href="portfolio.css">
+    <script src="portfolio.js" defer></script>
+</head>
+<body>
+    <div id="system-boot">
+        <div class="boot-content">
+            <div class="boot-logo">&lt;IAN/CORP/&gt;</div>
+            <div class="scan-container">
+                <div class="scan-bar"></div>
+                <div class="scan-line"></div>
+            </div>
+            <div class="boot-status">INITIALIZING_BIOMETRIC_SCAN...</div>
+            <div class="boot-progress">0%</div>
+        </div>
+    </div>
+
+    <canvas id="data-rain"></canvas>
+    <div class="grid-background"></div>
+    <div class="vignette"></div>
+    <div class="scanlines"></div>
+    
+    <!-- SVG FILTERS (DISABLED FOR LOCAL PROTOCOL STABILITY) -->
+
+    <div class="content-wrapper">
+        <!-- NAVBAR -->
+        <nav>
+            <div class="logo">&lt;IAN/CORP/&gt;</div>
+            <button class="nav-toggle" id="nav-toggle">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- HOBBIES / MOVIES -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <h1>
+                    I build
+                    <span class="highlight">systems.</span>
+                    I design
+                    <span class="highlight">control.</span>
+                </h1>
+                <p>Full-stack engineer obsessed with precision. Turning complexity into elegant interfaces.</p>
+                <button class="cta-button" onclick="document.querySelector('#projects').scrollIntoView({behavior:'smooth'})">View My Work</button>
+            </div>
+            <div class="hero-visual">
+                <div class="geometric">
+                    <div class="circle-glitch"></div>
+                    <div class="circle-extra-outer"></div>
+                    <div class="circle-outer"></div>
+                    <div class="circle-middle"></div>
+                    <div class="circle-inner"></div>
+                    <div class="scanning-line"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about">
+            <div class="about-content">
+                <h2 class="section-title">Corporate Profile</h2>
+                <div class="about-bio">
+                    <p class="lead-text">I didn’t come here to play the game—I came to build the terminal and own the logic that runs it.</p>
+                    <div class="about-details">
+                        <p>Listen, ever since I first touched a keyboard, I wasn’t interested in just "using" the tech; I wanted to dismantle it, understand it, and make it mine. Now that I’m deep in the code, I’m not just a student—I’m evolving into a high-level creator, a goddamn architect, and the innovator this industry isn't ready for. I don’t build "projects." I build <strong>DOPE SHIT</strong>. Period.</p>
+                        <p style="margin-top: 1.5rem;">My mission? To engineer an existence so optimized and successful it makes your head spin. I’m done being a consumer. I’m here to take over, to live life at the absolute maximum setting, and to become filthy fucking rich while I'm at it. I’m building a legacy that the next generation of coders will look at with equal parts fear and respect. I’m here to make life an ease for my people, to dominate every pixel I touch, and to do it all with an ego that’s earned. You think I’m dreaming? Just watch the screen. <strong>I’m the Dope Man of Code. Let’s get it.</strong></p>
+                    </div>
+                </div>
+                
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">Year 3</span>
+                        <span class="stat-label">Academic Progress</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">4+ Yrs</span>
+                        <span class="stat-label">Coding Hobbyist</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">100%</span>
+                        <span class="stat-label">Mission Focus</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-visual">
+                <div class="profile-reveal" onclick="portfolio.showProfileDetail()" style="cursor: pointer;">
+                    <img src="1.jpg" alt="IAN/CORP Profile" class="reveal-img">
+                    <div class="reveal-overlay">
+                        <span class="reveal-text">UNLOCKING ACCESS...</span>
+                    </div>
+                    <div class="xray-overlay"></div>
+                    <div class="bio-data-points">
+                        <span class="bio-point" style="top: 20%; left: 30%;">[EYE_SCAN:OK]</span>
+                        <span class="bio-point" style="top: 45%; left: 70%;">[ID:IAN_CORP]</span>
+                        <span class="bio-point" style="top: 80%; left: 20%;">[PULSE:STABLE]</span>
+                        <div class="data-dot" style="top: 25%; left: 40%;"></div>
+                        <div class="data-dot" style="top: 50%; left: 60%;"></div>
+                    </div>
+                    <div class="reveal-glitch"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item" onclick="portfolio.showSkillDetail('Full-Stack Dev')">
+                    <div class="skill-name">Full-Stack Dev</div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+                    <div class="skill-percent">85%</div>
+                </div>
+                <div class="skill-item" onclick="portfolio.showSkillDetail('Frontend Design')">
+                    <div class="skill-name">Frontend Design</div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 80%;"></div></div>
+                    <div class="skill-percent">80%</div>
+                </div>
+                <div class="skill-item" onclick="portfolio.showSkillDetail('System Design')">
+                    <div class="skill-name">System Design</div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 78%;"></div></div>
+                    <div class="skill-percent">78%</div>
+                </div>
+                <div class="skill-item" onclick="portfolio.showSkillDetail('Problem Solving')">
+                    <div class="skill-name">Problem Solving</div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+                    <div class="skill-percent">90%</div>
+                </div>
+                <div class="skill-item" onclick="portfolio.showSkillDetail('UI/UX Implementation')">
+                    <div class="skill-name">UI/UX Implementation</div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 82%;"></div></div>
+                    <div class="skill-percent">82%</div>
+                </div>
+                <div class="skill-item" onclick="portfolio.showSkillDetail('Adaptability')">
+                    <div class="skill-name">Adaptability</div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 88%;"></div></div>
+                    <div class="skill-percent">88%</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience">
+            <div class="experience-bg-elements">
+                <div class="exp-dot"></div>
+                <div class="exp-dot"></div>
+                <div class="exp-dot"></div>
+                <div class="exp-dot"></div>
+            </div>
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Strategic Systems Engineering (3rd Year CS)</h3>
+                        <p>Orchestrating complex software architectures during the 2nd Semester of Junior year. Leveraging high-level abstractions to engineer scalable backend solutions and precision-driven user interfaces. Currently focusing on heuristic optimization and secure data-flow pipelines.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2023 - 2024</div>
+                    <div class="timeline-content">
+                        <h3>Full-Stack Operative (Freelance)</h3>
+                        <p>Executing high-stakes digital contracts involving full-lifecycle web development and creative infrastructure. Implementing robust MVC paradigms for diverse clients while maintaining a focus on rapid prototyping and tactical deployment of features.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2021 - 2023</div>
+                    <div class="timeline-content">
+                        <h3>The College Transition / Algorithmic Genesis</h3>
+                        <p>Transitioning from hobbyist explorations to rigorous academic system design. Mastering the fundamentals of data structures, computational logic, and cross-functional synchronization. This phase marked the shift from 'building apps' to 'architecting systems'.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2019 - 2021</div>
+                    <div class="timeline-content">
+                        <h3>Logic Foundations (Grade 11 - 12)</h3>
+                        <p>Initial immersion into the logic-driven universe of software. Developed the core foundations of algorithmic thinking through hobbyist projects. This 'genesis' phase established the obsession with clean code and structural integrity that defines my current work.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECH STACK -->
+        <section id="tech-stack">
+            <h2 class="section-title">Tech Stack</h2>
+            <div class="tech-marquee">
+                <div class="tech-track">
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">PHP</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">SQL</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Next.js</span>
+                    <span class="tech-tag">Tailwind</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">AWS</span>
+                    <!-- Duplicate for infinite scroll effect -->
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">PHP</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">SQL</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Next.js</span>
+                    <span class="tech-tag">Tailwind</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">AWS</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects">
+            <h2 class="section-title">Work</h2>
+            <div class="projects-grid">
+                <div class="project-card" onclick="portfolio.showProjectDetail('Cathedral CMS')">
+                    <h3 class="project-title">Cathedral CMS</h3>
+                    <p class="project-desc">Web-based management system for IFI Cathedral. Built with PHP/MySQL, featuring audit logs and real-time data sync.</p>
+                    <button class="project-button">View Detail</button>
+                </div>
+                <div class="project-card" onclick="portfolio.showProjectDetail('Network Topology')">
+                    <h3 class="project-title">Network Topology</h3>
+                    <p class="project-desc">Cisco Packet Tracer configuration. Multi-subnet design with routing protocols and VLAN setup.</p>
+                    <button class="project-button">View Detail</button>
+                </div>
+                <div class="project-card" onclick="portfolio.showProjectDetail('Security Audit')">
+                    <h3 class="project-title">Security Audit</h3>
+                    <p class="project-desc">Code quality assessment framework. Automated vulnerability detection and compliance reporting.</p>
+                    <button class="project-button">View Detail</button>
+                </div>
+                <div class="project-card" onclick="portfolio.showProjectDetail('Freelancing Ops')">
+                    <h3 class="project-title">Freelancing Ops</h3>
+                    <p class="project-desc">Digital arts, custom coding, and Hitman for Hire (contracted ops). Delivering results regardless of the target.</p>
+                    <p class="project-quote">"kakampi or kalaban kung anong gusto mo" - hev</p>
+                    <button class="project-button">View Detail</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEURAL SYNCHRONIZATION (SPOTIFY SECTION) -->
+        <section id="neural-sync">
+            <h2 class="section-title">Neural Synchronization</h2>
+            <div class="sync-container">
+                <div class="sync-visualizer">
+                    <div class="wave-bars">
+                        <!-- 60 high-fidelity bars for full-width density -->
+                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
+                <div class="sync-info">
+                    <div class="sync-status">
+                        <span class="status-indicator"></span>
+                        <span class="status-text">LIVE_FREQUENCY_SYNC_ACTIVE</span>
+                    </div>
+                    <div class="current-op-track">
+                        <span class="op-label">CURRENTLY_SYNCHRONIZING:</span>
+                        <h3 class="track-name">Wala na bang pag-ibig</h3>
+                        <p class="artist-name">Jaya</p>
+                    </div>
+                    <div class="sync-queue">
+                        <span class="op-label">BUFFERED_IN_QUEUE:</span>
+                        <div class="queue-list">
+                            <div class="queue-item">Babaero — Hev Abi</div>
+                            <div class="queue-item">You Are Not Alone — Michael Jackson</div>
+                            <div class="queue-item">ARCHIVE_PLAYLIST_V2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CINEMA ARCHIVE -->
+        <section id="cinema">
+            <h2 class="section-title">Film Archive</h2>
+            <p class="section-intro" style="text-align: center; color: var(--muted-green); margin-bottom: 3rem; max-width: 600px; margin-inline: auto;">A curated repository of cinematic benchmarks. These are the narratives and visual architectures that fuel my creative logic.</p>
+            <div class="cinema-grid">
+                <div class="movie-card" onclick="portfolio.showMovieDetail('Pulp Fiction')">
+                    <img src="https://image.tmdb.org/t/p/w500/vQWk5YBFWF4bZaofAbv0tShwBvQ.jpg" alt="Pulp Fiction" class="movie-poster">
+                    <div class="movie-info">Pulp Fiction</div>
+                </div>
+                <div class="movie-card" onclick="portfolio.showMovieDetail('Goodfellas')">
+                    <img src="https://image.tmdb.org/t/p/w500/9OkCLM73MIU2CrKZbqiT8Ln1wY2.jpg" alt="Goodfellas" class="movie-poster">
+                    <div class="movie-info">Goodfellas</div>
+                </div>
+                <div class="movie-card" onclick="portfolio.showMovieDetail('Babylon')">
+                    <img src="https://image.tmdb.org/t/p/w500/wjOHjWCUE0YzDiEzKv8AfqHj3ir.jpg" alt="Babylon" class="movie-poster">
+                    <div class="movie-info">Babylon</div>
+                </div>
+                <div class="movie-card" onclick="portfolio.showMovieDetail('Star Wars: III')">
+                    <img src="https://image.tmdb.org/t/p/w500/xfSAoBEm9MNBjmlNcDYLvLSMlnq.jpg" alt="Revenge of the Sith" class="movie-poster">
+                    <div class="movie-info">Star Wars: III</div>
+                </div>
+                <div class="movie-card" onclick="portfolio.showMovieDetail('V for Vendetta')">
+                    <img src="https://image.tmdb.org/t/p/w500/piZOwjyk1g51oPHonc7zaQY3WOv.jpg" alt="V for Vendetta" class="movie-poster">
+                    <div class="movie-info">V for Vendetta</div>
+                </div>
+                <div class="movie-card" onclick="portfolio.showMovieDetail('Talladega Nights')">
+                    <img src="https://image.tmdb.org/t/p/w500/3iCiTqsmJz1mO85AHzTiHNkRmb6.jpg" alt="Talladega Nights" class="movie-poster">
+                    <div class="movie-info">Talladega Nights</div>
+                </div>
+                <div class="movie-card" onclick="portfolio.showMovieDetail('End of Evangelion')">
+                    <img src="https://image.tmdb.org/t/p/w500/j6G24dqI4WgUtChhWjfnI4lnmiK.jpg" alt="End of Evangelion" class="movie-poster">
+                    <div class="movie-info">End of Evangelion</div>
+                </div>
+                <div class="movie-card" onclick="portfolio.showMovieDetail('The Northman')">
+                    <img src="https://image.tmdb.org/t/p/w500/aSSJMnHknzKjlZ6zybwD7eyJ4Po.jpg" alt="The Northman" class="movie-poster">
+                    <div class="movie-info">The Northman</div>
+                </div>
+                <div class="movie-card" onclick="portfolio.showMovieDetail('The Batman')">
+                    <img src="https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg" alt="The Batman" class="movie-poster">
+                    <div class="movie-info">The Batman</div>
+                </div>
+                <div class="movie-card" onclick="portfolio.showMovieDetail('Pacific Rim')">
+                    <img src="https://image.tmdb.org/t/p/w500/8wo4eN8dWKaKlxhSvBz19uvj8gA.jpg" alt="Pacific Rim" class="movie-poster">
+                    <div class="movie-info">Pacific Rim</div>
+                </div>
+                <div class="movie-card" onclick="portfolio.showMovieDetail('Se7en')">
+                    <img src="https://image.tmdb.org/t/p/w500/191nKfP0ehp3uIvWqgPbFmI4lv9.jpg" alt="Se7en" class="movie-poster">
+                    <div class="movie-info">Se7en</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OPERATIONAL ACHIEVEMENTS -->
+        <section id="achievements">
+            <h2 class="section-title">Operational Achievements</h2>
+            <div class="achievements-grid">
+                <div class="achievement-item">
+                    <div class="ach-header">
+                        <span class="ach-code">OP_ID: CATHEDRAL_SECURE</span>
+                        <span class="ach-status">STATUS: SUCCESSFUL</span>
+                    </div>
+                    <h3 class="ach-title">Cathedral Data Migration</h3>
+                    <p class="ach-desc">Secured and synchronized 10,000+ sensitive records into a centralized MVC-driven architecture. Zero data loss during transmission.</p>
+                    <div class="ach-tags">
+                        <span>DATABASE_HARDENING</span>
+                        <span>10K+_RECORDS</span>
+                    </div>
+                </div>
+
+                <div class="achievement-item">
+                    <div class="ach-header">
+                        <span class="ach-code">OP_ID: LATENCY_ZERO</span>
+                        <span class="ach-status">STATUS: DEPLOYED</span>
+                    </div>
+                    <h3 class="ach-title">Precision UI Engineering</h3>
+                    <p class="ach-desc">Engineered a high-fidelity interface for Client X, achieving near 0-latency interaction through surgical CSS/JS optimization.</p>
+                    <div class="ach-tags">
+                        <span>PERFORMANCE_OPS</span>
+                        <span>UX_OPTIMIZATION</span>
+                    </div>
+                </div>
+
+                <div class="achievement-item rank-item">
+                    <div class="ach-header">
+                        <span class="ach-code">OP_ID: VAL_FIELD_OPS</span>
+                        <span class="ach-status">STATUS: ACTIVE</span>
+                    </div>
+                    <h3 class="ach-title">Combat Readiness</h3>
+                    <p class="ach-desc">Maintaining tactical proficiency in high-stakes environments. Silver 1 rank currently being utilized for field-testing coordination.</p>
+                    <div class="ach-tags">
+                        <span class="rank-badge">SILVER 1</span>
+                        <span>TACTICAL_OPS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <div class="contact-content">
+                <h2 class="section-title">Contact</h2>
+                <p class="contact-text">Let's <span class="highlight">build something</span> together.</p>
+                <form class="contact-form">
+                    <input 
+                        type="email" 
+                        class="form-input" 
+                        placeholder="your@email.com" 
+                        required
+                    />
+                    <textarea 
+                        class="form-input form-textarea" 
+                        placeholder="Tell me about your project..."
+                        required
+                    ></textarea>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer-social">
+                <p class="social-caption">If you're lost, follow me on <span class="highlight">FB</span> or <span class="highlight">IG</span></p>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank" class="social-link fb" title="Facebook Signal">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="social-link ig" title="Instagram Signal">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.012 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.012 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.333-.072-4.613c-.06-1.277-.262-2.147-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07s-3.585-.015-4.85-.074c-1.17-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.645-1.44-1.44 0-.794.645-1.439 1.44-1.439.794-.001 1.44.645 1.44 1.439z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <p class="footer-copyright">© 2026 IAN/CORP. Precision by design.</p>
+        </footer>
+    </div>
+    <!-- SKILL MODAL -->
+    <div id="skill-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="portfolio.closeModal()">&times;</span>
+            <div id="modal-body">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
