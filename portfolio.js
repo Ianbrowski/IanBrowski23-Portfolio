@@ -967,21 +967,21 @@ class Portfolio {
 
     showProjectDetail(projectName) {
         const projectData = {
-            'Cathedral CMS': {
-                desc: 'A full-scale Management Information System engineered for the IFI Cathedral. This project involved migrating legacy manual records into a secure, centralized database. Features include real-time audit logging, automated financial reporting, and strict role-based access control for administrative staff.',
-                tags: ['PHP', 'MySQL', 'JavaScript', 'MVC', 'Security']
+            'Arts & Posters': {
+                desc: 'Freelancing digital arts, poster designs, and all forms of art-related digital products. High-fidelity visual architecture focused on delivering premium aesthetic experiences.',
+                tags: ['Digital Arts', 'Design', 'Visual Architecture', 'Creative Ops']
             },
-            'Network Topology': {
-                desc: 'A sophisticated network infrastructure simulation designed for enterprise-level scalability. Implemented multi-subnet routing protocols (OSPF/EIGRP), VLAN segmentation for departmental isolation, and robust firewall rules to harden the network against unauthorized lateral movement.',
-                tags: ['Cisco', 'Networking', 'Routing', 'Security', 'VLAN']
+            'Web Development': {
+                desc: 'Full-stack engineering for custom coding and websites. Specializing in highly dynamic, scalable, and beautifully designed digital platforms.',
+                tags: ['Full-Stack', 'Frontend', 'Backend', 'UI/UX']
             },
-            'Security Audit': {
-                desc: 'A comprehensive framework developed to assess and enhance code quality across various repositories. This project involved creating automated vulnerability scanners, implementing secure coding standards (OWASP), and generating real-time compliance reports for engineering teams.',
-                tags: ['Security', 'Quality Assurance', 'Automation', 'Compliance', 'Audit']
+            'Technical Skills': {
+                desc: 'Providing robust technical consulting, deep system architecture, and optimization algorithms. Solving complex problems with precise code and scalable designs.',
+                tags: ['Problem Solving', 'System Design', 'Algorithms', 'Optimization']
             },
-            'Freelancing Ops': {
-                desc: 'Tactical digital operations executed for private clients. These projects range from high-fidelity digital arts and interactive media to bespoke software solutions and precision-coded backend services. Every contract is executed with a focus on results, whether as a collaborator or an independent operative.',
-                tags: ['Freelance', 'Digital Arts', 'Custom Code', 'Ops', 'Hitman-for-Hire']
+            'Hitman for Hire': {
+                desc: 'Executing high-stakes tactical operations. Contracted hits and operations executed with absolute discretion and efficiency, neutralizing the targets assigned.',
+                tags: ['Tactical Ops', 'Discrete Execution', 'Hitman', 'Field Operations']
             }
         };
 
@@ -994,7 +994,7 @@ class Portfolio {
             <div class="modal-skill-tags">
                 ${data.tags.map(tag => `<span class="skill-tag">${tag}</span>`).join('')}
             </div>
-            ${projectName === 'Freelancing Ops' ? `<p class="project-quote" style="margin-top: 2rem;">"kakampi or kalaban kung anong gusto mo" - hev</p>` : ''}
+            ${projectName === 'Hitman for Hire' ? `<p class="project-quote" style="margin-top: 2rem;">"kakampi or kalaban kung anong gusto mo" - hev</p>` : ''}
         `;
 
         this.openModal();
